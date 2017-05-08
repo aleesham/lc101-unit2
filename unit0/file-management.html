@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=UTF-8"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../css/slidestyles.css" type="text/css" media="screen" charset="utf-8">
+
+<title>File Management</title>
+
+</head>
+
+<!-- #ToDo: Change 16:9 to 4:3 or vice versa, according to the current projector / screen -->
+<body onload="var slideshow = remark.create({ratio: '16:9', navigation: {scroll: true, touch: true, click: false}, countIncrementalSlides: false, highlightLanguage: 'bash', highlightStyle: 'tomorrow-night-blue'});">
+
+<!-- #ToDo: Write your slides in MarkDown here -->
+<textarea id="source">
+
+background-image: url(../images/codecamp.png)
+background-color: #cacaca
+
+---
+
+class: center, middle
+
+# File Management
+## Unit 0: Lesson 1
+
+---
+
+## Files and File Types
+
+- A **file** is a piece of data stored on a computer
+- Files generally have a *type*, which indicates how they are to be used
+    - Examples: The `.docx` format is used for Microsoft Word files
+- File types dictate the format of the data stored within the file
+- The type of a file is indicated by an **extension**
+
+???
+Demo: xxd
+
+Talk about how formats relate to file contents
+
+---
+
+## File Type/Extension Examples
+
+File extensions make up the last portion of the file name, after a dot (`.`)
+
+**Example:** `launchcode_log.jpg`
+
+- Images: `.png`, `.jpg`, `.gif`
+- Word Processing: `.docx`, `.pages`
+- Executable files: `.exe`
+- Plain text files: `.txt`
+- Zip/archive files: `.zip`, `.tar`, `.gz`
+
+Many file types require special programs to open them. Which programs might you use to open the file types above?
+
+---
+
+## Folders and the Filesystem
+
+A **folder** is a named collection of files
+
+Every file is in a folder, and every folder is itself in a folder, except for one special folder, called the **filesystem root** or **root folder**.
+
+![Folder](images/folder.png)
+
+???
+Analogy: Files and the filesystem -> manilla folder in filing cabinet
+
+Describe filesystem as a tree
+
+Note: Folders are files too!
+
+---
+
+## Navigating the Filesystem
+
+There are many ways to navigate the filesystem:
+
+- Via a special program: Explorer (Windows) or Finder (Mac)
+- Via a terminal / shell / command-line interface
+- Within programs (e.g. opening a file in a web browser, or MS Word)
+
+???
+Demo:
+- Show each of these methods
+
+---
+
+## Special Folders
+
+We'll refer to some folders more than others.
+
+- Home
+- Downloads
+- Documents
+- Trash / Recycle Bin
+
+???
+Demo: Find each of these in both Windows and Mac
+
+Q: If the Trash is just a folder, what happens when we "delete" a file?
+
+---
+
+## Copying and Moving Files
+
+We'll frequently want to move or copy files and folders. This can be done via the command-line, or via Finder or Windows Explorer.
+
+To move or copy files via one of the file browser applications, do one of the following:
+- Use the right-click menu
+- Use keyboard shortcuts for copy/paste: cmd+C / ctrl+C (copy), cmd+V / ctrl+V (paste)
+
+---
+
+## Archive Files
+
+An **archive file** is a special file type that allows lots of files and folders to be bundled up and moved easily.
+
+The most common archive file type is that of a **ZIP file**.
+
+???
+Show zip file as containing
+
+Demo: Zip up a folder, move it, unzip it
+
+
+</textarea><script type="text/javascript" src="../js/remark-latest.min.js"></script></body></html>
