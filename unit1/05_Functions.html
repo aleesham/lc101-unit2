@@ -1,0 +1,294 @@
+<!DOCTYPE html><html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=UTF-8"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../css/slidestyles.css" type="text/css" media="screen" charset="utf-8">
+
+<!-- #ToDo: Change Title for the presentation -->
+<title>Functions</title>
+
+</head>
+
+<!-- #ToDo: Change 16:9 to 4:3 or vice versa, according to the current projector / screen -->
+<body onload="var slideshow = remark.create({ratio: '16:9', navigation: {scroll: true, touch: true, click: false}, countIncrementalSlides: false, highlightLanguage: 'bash', highlightStyle: 'tomorrow-night-blue'});">
+
+<!-- #ToDo: Write your slides in MarkDown here -->
+<textarea id="source">
+
+background-image: url(../images/codecamp.png)
+background-color: #cacaca
+
+---
+
+class: center, middle
+
+# Functions
+
+---
+
+## What Is a Function?
+
+### Definition
+
+A **function** is a named sequence of statements that carry out a specific task.
+
+---
+
+## Defining a Function
+
+We can define our own functions with the following syntax:
+
+```python
+def my_function( parameters ):
+    # function code, with our without a return value
+```
+
+Here's a specific example:
+
+```python
+def hello_world(name):
+    return "Hello " + name
+```
+
+---
+
+## Using a Function
+
+We can use the functions we define the same way that we use other functions.
+
+```python
+message = hello_world("Sally")
+```
+
+When we use a function, we can also say that we are **calling** function, or that the line of code has a **function call**
+
+---
+
+## Return value of a Function
+
+A function may contain a **return statement**, which can pass a value back to the code that called the function.
+
+
+```python
+def hello_world(name):
+    return "Hello " + name
+
+message = hello_world("Sally")
+```
+
+---
+
+## Visualizing a function
+
+![Visualizing a function](images/function.png)
+
+---
+
+## An Example
+
+```python
+import turtle
+
+def draw_square(a_turtle, size):
+    for i in range(4):
+        a_turtle.forward(size)
+        a_turtle.left(90)
+
+speedy = turtle.Turtle()
+draw_square(speedy, 50)
+```
+
+---
+
+## Activity
+
+### Step 1
+
+
+
+Write a function called `add_two` that takes a number and prints the result of adding 2 to the input parameter. Run your program.
+
+**Question**: Does the code within a function run when we define a function?
+
+---
+
+
+## Activity
+
+### Step 2
+
+Modify `add_two` so that it returns the result instead of printing. Call the function.
+
+**Question:** If a function returns a value and we don't store it in a variable, what happens to the return value?
+
+---
+
+
+## Activity
+
+### Step 3
+
+Add a line of code within the function body, but after the return statement:
+
+```python
+print("after return")
+```
+
+**Question**: When our function runs, does this line of code execute?
+
+---
+
+## Some More Questions
+
+In your `~/lc101/codecamp-notes/README.md` file, answer the following questions:
+
+1. Does a function have to have parameters?
+1. What happens if we call a function without providing a value for one or more input parameters?
+1. Does a function have to return a value?
+1. What happens if we have a function that doesn't return a value, but we try to store a return value in a variable?
+
+---
+
+## Some Answers
+
+1. Does a function have to have parameters? No. A function may have 0 or more parameters, as decided by the programmer.
+1. What happens if we call a function without providing a value for one or more input parameters? We get a `TypeError` unless there are default values provided.
+1. Does a function have to return a value? NOPE
+1. What happens if we have a function that doesn't return a value, but we try to store a return value in a variable? The value that is implicitely returned and stored is the **special value** `None`
+
+---
+
+## Scope
+
+All variables and parameters within a program have a **scope**. Their scope determines how they may be accessed and used.
+
+**Example**:
+
+```python
+def add_two(num):
+    num = num + 2
+
+add_two(2)
+print(num)
+```
+
+---
+
+## Local Scope
+
+Variables and parameters within a function have **local scope**. They may only be accessed within the function in which they are defined.
+
+We call such variables **local variables**
+
+```python
+def add_two(num):
+    result = num + 2
+    return result
+```
+
+`result` is a local variable
+
+---
+
+## Global Scope
+
+Variables and parameters that *are not* defined within a function have **global scope**. They may be accessed from anywhere within the given file or program.
+
+```python
+num = 2
+
+def print_num():
+    print(num)
+
+print_num()
+```
+
+The variable `num` has global scope, so it can be "seen" within `print_num`
+
+---
+
+## Shadowing
+
+What happens when we use the same name for a global variable and a local variable?
+
+```python
+num = 2
+
+def print_num(num):
+    print(num)
+
+print_num(3)
+```
+
+---
+
+## Shadowing
+
+In such cases, the local variable or paremeter will be used. We say that this local variable or parameter **shadows** the global variable.
+
+```python
+num = 2
+
+def print_num(num):
+    print(num)
+
+print_num(3)
+```
+
+---
+
+## Using a main Function
+
+In general, we want to avoid cluttering up our programs with global code. We can avoid doing so by putting any such global code within a `main` function, and then calling the `main` function
+
+```python
+def hello(name):
+    return "Hello " + name
+
+def main():
+    message = hello("Jenny")
+    print(message)
+
+main()
+```
+
+---
+
+## Using a main Block
+
+A better way to do this in Python involves the special variable `__name__`
+
+```python
+def hello(name):
+    return "Hello " + name
+
+if __name__ == '__main__':
+    message = hello("Jenny")
+    print(message)
+```
+
+We'll often refer to this as a **main block**
+
+---
+
+## Writing Cleaner Code
+
+You should begin thing about the programs you write as having two components:
+
+### Functions
+
+For a given problem that you're solving, write the code within a function to make it more reusable and self-contained.
+
+### Test Code
+
+Put your test code within a main block.
+
+---
+
+## Lesson Survey
+
+Go to `socrative.com` and log in using Room Name: CODECAMP
+
+**Instructor Question**
+
+Which one book exercise did you have the most trouble this week?
+
+---
+
+</textarea><script type="text/javascript" src="../js/remark-latest.min.js"></script></body></html>
