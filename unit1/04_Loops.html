@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=UTF-8"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../css/slidestyles.css" type="text/css" media="screen" charset="utf-8">
+
+<!-- #ToDo: Change Title for the presentation -->
+<title>Loops and Turtles</title>
+
+</head>
+
+<!-- #ToDo: Change 16:9 to 4:3 or vice versa, according to the current projector / screen -->
+<body onload="var slideshow = remark.create({ratio: '16:9', navigation: {scroll: true, touch: true, click: false}, countIncrementalSlides: false, highlightLanguage: 'bash', highlightStyle: 'tomorrow-night-blue'});">
+
+<!-- #ToDo: Write your slides in MarkDown here -->
+<textarea id="source">
+
+background-image: url(../images/codecamp.png)
+background-color: #cacaca
+
+---
+
+class: center, middle
+
+# Loops and Turtles
+
+---
+
+## Repeating a task
+
+Consider the following problem:
+
+*Print out all of the integers from 1 to 100.*
+
+One possible solution:
+
+```python
+print(1)
+print(2)
+print(3)
+# … and so on
+```
+
+---
+
+## This is bad!
+
+- It’s tedious
+- It’s error-prone
+- If we want to make a relatively small change (e.g. to print only even numbers, or print up to 150) then we have to edit a LOT of code
+
+---
+
+## Loops and Iteration
+
+![Iteration (What Is Code? screenshot)](images/repetition.png)
+
+---
+
+## Loop Components
+
+In order to repeat a task, we need two things:
+
+1. The task that should be repeated (e.g. "print a number")
+2. The data set that should be used with the task (e.g. "use 1...100")
+
+---
+
+## Lists
+
+A **list** in Python is a data structure that allows us to collect several values in a single variable or value.
+
+Lists look like this:
+
+```python
+[value1, value2, value3,…, valueN]
+```
+
+---
+
+## List Examples
+
+```python
+[1, 2, 3, 4, 5]
+[“apple”, “orange”, “banana”]
+[36, True, “eggs”, 2.7]
+```
+
+---
+
+## Lists As Types and Values
+
+We can store a list in a variable:
+
+```python
+retired_nums = [1, 2, 6, 9, 10, 14, 17, 20, 24, 42]
+```
+
+Lists define a new data type:
+
+```python
+print(type(retired_nums))
+```
+
+Output:
+```nohighlight
+<type 'list'>
+```
+
+---
+
+## For Loops
+
+A `for` loop allows us to repeat a section of code a **specific number of times**
+
+Each `for` loop has an **iterator variable** that changes its value every time the code section is repeated
+
+---
+
+## For Loop Anatomy
+
+![For loop anatomy](images/loop.png)
+
+---
+
+## Loop Flow
+
+The Unit 1 book has a tool called Code Lens that let's us visualize the flow of loops.
+
+[Demo](https://runestone.launchcode.org/runestone/static/thinkcspy/PythonTurtle/FlowofExecutionoftheforLoop.html)
+
+---
+
+## For Loop Examples
+
+Let's code loops that:
+
+- print a list of numbers; add them up
+- Greet a list of individuals
+
+---
+
+## Repeating a task
+
+Consider the following problem:
+
+*Print out all of the integers from 1 to 100.*
+
+One possible solution:
+
+```python
+print(1)
+print(2)
+print(3)
+# … and so on
+```
+
+---
+
+## The range Function
+
+The function `range(n)` will create a list of `n` integers from `0` to `n-1`
+```python
+print(range(5))
+```
+
+Output: `[0, 1, 2, 3, 4]`
+
+Example: Let's print even numbers from 0 to 50, inclusive
+
+---
+
+## Using the range Function
+
+To create more custom/complicated lists, use:
+
+```python
+range(start, stop, step)
+```
+
+- `start` - the first number in the list
+- `stop` - one more than the last number in the list
+- `step` - how much to increment each time
+
+---
+
+## Turtles
+
+We'll use a Python **module** called `turtle` that will give us a nice way to build simple images using loops
+
+```python
+import turtle
+zach = turtle.Turtle()
+zach.forward(150)
+zach.left(90)
+zach.forward(75)
+```
+
+---
+
+## Step-by-step
+
+- `import turtle` - Makes the `turtle` module available within our program
+- `zach = turtle.Turtle()` - Creates a new turtle **object** and stores it in the variable named `zach`
+- `zach.forward(150)` - Move `zach` forward by 150 units
+- `zach.left(90)` - Move `zach` left by 90 degrees
+- zach.forward(75) - Move `zach` forward by 75 units
+
+---
+
+## Using Turtles Within Loops
+
+**Exercise**
+
+Draw a square using a turtle
+
+---
+
+## Lesson Survey
+
+Go to `socrative.com` and log in using Room Name: CODECAMP
+
+**Instructor Question**
+
+What are you having for lunch?
+
+---
+
+</textarea><script type="text/javascript" src="../js/remark-latest.min.js"></script></body></html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=UTF-8"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../css/slidestyles.css" type="text/css" media="screen" charset="utf-8">
+
+<!-- #ToDo: Change Title for the presentation -->
+<title>Modules</title>
+
+</head>
+
+<!-- #ToDo: Change 16:9 to 4:3 or vice versa, according to the current projector / screen -->
+<body onload="var slideshow = remark.create({ratio: '16:9', navigation: {scroll: true, touch: true, click: false}, countIncrementalSlides: false, highlightLanguage: 'bash', highlightStyle: 'tomorrow-night-blue'});">
+
+<!-- #ToDo: Write your slides in MarkDown here -->
+<textarea id="source">
+
+background-image: url(../images/codecamp.png)
+background-color: #cacaca
+
+---
+
+class: center, middle
+
+# Modules
+
+---
+
+# A brief introduction to functions
+
+---
+
+## Using Functions
+
+We've used some built-in functions already:
+
+- `print`
+- `input`
+- `range`
+
+Each of these carried out a specific task.
+
+Let's review the mechanics of using functions...
+
+---
+
+## Function Usage
+
+Each function that we have used has taken one or more *parameters*.
+
+```python
+print("Hello world")
+name = input("What's your name")
+some_numbers = range(1, 15, 2)
+```
+
+In these three examples, the parameters are:
+
+- `"Hello world"`
+- `"What's your name?"`
+- `range(1, 15, 2)`
+
+**Definition:** A **function parameter** (or just **parameter**) is a value that somebody using our function will provide.
+
+---
+
+## Functions That Return Values
+
+Of the functions that we've used, `input` and `range` result in a value being given back to us. This value is known as a **return value**.
+
+```python
+name = input("What's your name")
+some_numbers = range(1, 15, 2)
+```
+
+We can think of the return value of a function as being "substituted" for the function call when the program is run.
+
+---
+
+## Defining a Function
+
+We can define our own functions with the following syntax:
+
+```python
+def my_function( parameters ):
+    # function code, with our with out a return value
+```
+
+We can call the functions we define the same way that we call other functions.
+
+---
+
+## Hello, world function
+
+```python
+def hello_world():
+    return "Hello world"
+
+message = hello_world()
+print(message)
+```
+
+Output: `Hello world`
+
+---
+## Hello, world function with parameter
+
+
+```python
+def hello_world(name):
+    return "Hello " + name
+
+message = hello_world("Sally")
+print(message)
+```
+
+Output: `Hello Sally`
+
+---
+
+# Modules
+
+---
+
+## What is a module?
+
+A **Python module** is a collection of Python code that is bundled up for others to use, but which is *not* part of the core Python programming language.
+
+To use modules, we must *install* and then *import* them.
+
+---
+
+## Modules in Activecode / Runestone
+
+Within the editors in the online textbook, the only modules available are:
+
+- `turtle`
+- `math`
+- `random`
+
+**It is not possible for you to install or import additional modules in these editors.**
+
+---
+
+## Modules in "Real" Coding Environments
+
+Installing a module requires a program like `pip` or `conda`. We'll use both in this class.
+
+In fact, you already have!
+
+```
+$ conda install pytest
+```
+
+```
+$ pip install pytest-html
+```
+
+These different tools will isntall and manage module on your computer in different ways. Each has an online repository of modules that are available to install with the given tool.
+
+---
+
+## Package Repositories
+
+### Pip
+
+`pip` installs packages from the Python Package Index, viewable at [pypi.org](https://pypi.org/)
+
+### Conda
+
+`conda` installs packages from the Anaconda repository, viewable at [anaconda.org](https://anaconda.org/)
+
+---
+
+## Using Modules
+
+For a module that is available, it can be used within a program by **importing** the module.
+
+```python
+import math
+```
+
+The **identifier** `math` is now available for us to use within our file.
+
+```python
+print(math.pi)
+```
+
+Output: `3.141592653589793`
+
+---
+
+## The math module
+
+This module provides math-related utilities. Here are a few:
+
+- Constants like `math.pi` and `math.e`
+- Command mathematical functions like `math.sqrt` and `math.sin`
+- Lots more documented at [docs.python.org](https://docs.python.org/3/library/math.html#module-math)
+
+---
+
+## The random module
+
+This module provides utility functions for generating "random" numbers
+
+- `random.random()` - returns a random float between 0 and 1
+- `random.randrange(n, m)` - returns a random integer between `n` and `m-1`
+
+*Note:* When computer scientists say "random number" they usually mean a *pseudo-random** number. An algorithm can't generate *truly* random numbers.
+
+---
+
+## The Python REPL
+
+We can run Python within a terminal:
+
+```
+$ python
+Python 3.6.0 |Continuum Analytics, Inc.| (default, Dec 23 2016, 13:19:00)
+[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+The `>>>` is a **python prompt**
+
+---
+
+## The Python REPL
+
+### Fun Fact
+
+REPL stands for **R**ead **Evaluate** **P**rint **L**oop, which describes how this prompt works.
+
+Lots of programming languages have REPLs, and they're great for trying things out!
+
+</textarea><script type="text/javascript" src="../js/remark-latest.min.js"></script></body></html>
