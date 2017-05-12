@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=UTF-8"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../css/slidestyles.css" type="text/css" media="screen" charset="utf-8">
+
+<!-- #ToDo: Change Title for the presentation -->
+<title>Conditionals</title>
+
+</head>
+
+<!-- #ToDo: Change 16:9 to 4:3 or vice versa, according to the current projector / screen -->
+<body onload="var slideshow = remark.create({ratio: '16:9', navigation: {scroll: true, touch: true, click: false}, countIncrementalSlides: false, highlightLanguage: 'bash', highlightStyle: 'tomorrow-night-blue'});">
+
+<!-- #ToDo: Write your slides in MarkDown here -->
+<textarea id="source">
+
+background-image: url(../images/codecamp.png)
+background-color: #cacaca
+
+---
+
+class: center, middle
+
+# Making Decisions with Conditionals
+
+---
+
+## Making Decisions
+
+Consider the following real-world instructions:
+
+*Go to the grocery store. If they have bananas, buy 1 bunch. If they are out of bananas, buy apples.*
+
+<img src="images/apple.png" style="width:300px !important;float: left;margin-right:200px !important;" />
+
+<img src="images/banana.png" style="width:400px !important;float: left;" />
+
+---
+
+## Making Decisions in Code
+
+Here’s a more code-oriented scenario:
+
+*Ask the user for an integer. If the integer is even, print "whiz!" If the integer is odd, print "bang!"*
+
+Let’s [try it](https://runestone.launchcode.org)...
+
+---
+
+## Branching
+
+We want our code to be able to flow like this
+
+<img src="images/branching.png" style="height:400px;" />
+
+---
+
+## Booleans
+
+Booleans are special data types (bool in Python) that signify True and False. They:
+
+- Must be capitalized
+- Are not strings; True is different from "True"
+- Are the result of certain arithmetic comparison expressions
+
+```python
+print(type(True))
+```
+
+**Output**: `&lt;class 'bool'&gt;`
+
+---
+
+## Comparisons
+
+For numbers (integers or floats) we can use **comparison operators** which evaluate to booleans:
+
+- \> (greater than)
+- \>= (greater than or equal to)
+- < (less than)
+- <= (less than or equal to)
+- == (equal to) \*
+- != (not equal to) \*
+
+\* Also work for comparing strings
+
+---
+
+## Comparison Examples
+
+```python
+8 > 7 # True
+8 < 7 # False
+8 == 7 # False
+8 != 7 # True
+```
+
+---
+
+## Boolean Algebra
+
+We can combine boolean values in ways using `and`, `or`, and `not` that match our natural language usage of combining different conditions.
+
+### Example 1
+
+It is Friday and we are in class
+
+### Example 2
+
+I am awake or I am asleep
+
+### Example 3
+
+The sky is not green.
+
+---
+
+## Boolean Algebra
+
+Some examples in code:
+
+```python
+x = 5
+y = 6
+
+print(x < 10 and y < 10)
+print(x == 5 or y == 5)
+print(not x > y)
+```
+
+Each of these prints `True`
+
+---
+
+## Conditional Syntax
+
+<img src="images/conditional.png" style="height:400px;" />
+
+---
+
+## Conditional Syntax
+
+```python
+if expression_or_variable:
+    # some code (1 or more lines)
+else:
+    # some other code (1 or more lines)
+```
+
+---
+
+## Example
+
+Let's write a program that asks the user for an integer and prints "even" or "odd" based on the value of the integer
+
+Update that to print whether or not a number is a multiple of any integer `N`
+
+---
+
+## Revisiting Our Earlier Example
+
+Ask the user for an integer. If the integer is even, print “whiz!” If the integer is odd, print “bang!”
+
+```python
+user_input = int(input("Enter an integer"))
+
+if user_input % 2 == 0:
+    print("even")
+else:
+    print("odd")
+```
+
+---
+
+## The else Clause
+
+We can omit the `else` portion of a conditional
+
+```python
+user_input = int(input("Enter an integer"))
+
+if user_input > 100:
+    print("Wow! That's a big number")
+```
+
+---
+
+### Nesting Conditionals
+
+We can nest conditionals, but must use multiple levels of indentation
+
+```python
+if n < 0:
+    print("n is negative")
+else:
+    if n > 0:
+        print("n is positive")
+    else:
+        print("n is 0")
+```
+
+---
+
+## The elif Clause
+
+We can have multiple branchs -- that is, multiple tests -- within the same conditional using `elif`
+
+```python
+if n < 0:
+    print("n is negative")
+elif n > 0:
+    print("n is positive")
+else:
+    print("n is 0")
+```
+
+---
+
+## Example: A Better Area Program
+
+```python
+import math
+
+radius = float(input("What's the radius of your circle?"))
+
+if radius >= 0:
+    area = math.pi * radius**2
+    print(area)
+else:
+    print("A circle may not have a negative radius. Please try again.")
+```
+
+---
+
+## Example: A Simple Spellchecker
+
+```python
+def is_spelled_correctly(word):
+
+    # We only know how to spell a few words
+    dictionary = ["LaunchCode", "blue", "rocket", "coding"]
+    is_correct = False
+
+    for entry in dictionary:
+        if entry == word:
+            is_correct = True
+
+    return is_correct
+
+if __name__ == '__main__':
+    print(is_spelled_correctly("CodeCamp"))
+    print(is_spelled_correctly("launchcode"))
+    print(is_spelled_correctly("blue"))
+```
+
+---
+
+## Conditionals "In the Wild"
+
+- verifying a user’s password
+- determining if a user is logged in
+- checking a user’s age
+- filtering a set of data
+
+</textarea><script type="text/javascript" src="../js/remark-latest.min.js"></script></body></html>
