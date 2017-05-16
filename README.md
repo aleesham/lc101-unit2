@@ -12,3 +12,4 @@ Lesson slides for LaunchCode's [Immersive CodeCamp](https://www.launchcode.org/c
 - [Function Basics and Modules](unit1/04_2_Modules.html)
 - [Functions](unit1/05_Functions.html)
 - [Conditionals](unit1/06_Conditionals.html)
+- [Ordered Collections](unit1/08_OrderedCollections.html)
