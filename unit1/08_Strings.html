@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=UTF-8"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../css/slidestyles.css" type="text/css" media="screen" charset="utf-8">
+
+<!-- #ToDo: Change Title for the presentation -->
+<title>Ordered Collections: Lists and Strings</title>
+
+</head>
+
+<!-- #ToDo: Change 16:9 to 4:3 or vice versa, according to the current projector / screen -->
+<body onload="var slideshow = remark.create({ratio: '16:9', navigation: {scroll: true, touch: true, click: false}, countIncrementalSlides: false, highlightLanguage: 'bash', highlightStyle: 'tomorrow-night-blue'});">
+
+<!-- #ToDo: Write your slides in MarkDown here -->
+<textarea id="source">
+
+background-image: url(../images/codecamp.png)
+background-color: #cacaca
+
+---
+
+class: center, middle
+
+# Ordered Collections: Lists and Strings
+
+---
+
+## Primitive Data Types
+
+Some of the data types that we've seen can't be "broken down" into smaller pieces
+
+This is true of `int`, `float`, and `bool`. We call these **primitive data types**.
+
+### Question
+
+What about `str` and `list`? Can these be broken down into smaller pieces?
+
+---
+
+## Non-primitive Types
+
+Lists and strings are inherently composed of smaller pieces
+
+### Example: List components
+
+A list like `[1, 2, 3]` contains the individual integer values `1`, `2`, and `3`
+
+### Example: String components
+
+A string like `'LaunchCode'` contains the invidual **characters** `L`, `a`, `u`, etc.
+
+Strings and lists are examples of **collection data types**
+
+---
+
+## Characters
+
+- We'll refer to a string of length 1 as a **character**
+- Many programming languages have their own character data type, but Python does not
+
+---
+
+## Empty Collections
+
+We can have a collection without any items in the collection
+
+```python
+empty_list = []
+empty_string = ''
+```
+
+These are still considered collections, and are often referred to as the **empty list** and the **empty string**
+
+---
+
+## List and String Indexes
+
+Lists and strings are **ordered collections** in that the items within them have a specific order. We refer to the place of an individual item in that order as it's **index**.
+
+For lists and strings, we may access the individual components using the index of that item.
+
+<img src="images/string-index.png" style="height:250px;" />
+
+---
+
+## Counting Like a Computer Scientist
+
+<img src="images/string-index.png" style="height:250px;" />
+
+Note that the *first* item has index 0, and that for a list or string of length `n`, the last item is at index `n-1`
+
+---
+
+## Bracket Notation
+
+Python provides an easy way to get an individual item out of a list or string using **bracket notation**
+
+For a list `my_list` we can get the item with index `i` using: `my_list[i]`
+
+```python
+message = 'Hello'
+print(message[1])
+```
+
+**Output:** `e`
+
+---
+
+## Examples
+
+```python
+states = ['MO', 'IL', 'KS']
+first_state = states[0]
+print(first_state)
+```
+
+**Output:** `MO`
+
+---
+
+## Examples
+
+```python
+state = 'Missouri'
+first_char = state[0]
+print(first_char)
+```
+
+**Output:** `M`
+
+---
+
+## The len Function
+
+The `len` function takes a string or list argument and returns the number of items in that collection
+
+```python
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+number_of_letters = len(alphabet)
+print(number_of_letters)
+```
+**Output:** `26`
+
+```python
+stooges = ['Larry', 'Moe', 'Curly']
+number_of_stooges = len(stooges)
+print(number_of_stooges)
+```
+
+**Output:** `3`
+
+---
+
+## When We Don't Know the Length...
+
+```python
+user_str = input("Enter a string: ")
+print('Your string has', len(user_str), 'characters')
+```
+
+---
+
+## Looping with Collections
+
+We can loop over strings the same way that we loop over lists
+
+```python
+for letter in 'LaunchCode':
+    print(letter)
+```
+
+**Output:**
+```nohighlight
+L
+a
+u
+n
+...
+```
+
+---
+
+## Looping with Collections
+
+It's possible to set up a different type of `for` loop that combines use of `range`, `len`, and list indexes
+
+```python
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+for i in range(len(alphabet)):
+    print(alphabet[i])
+```
+
+**Output:**
+
+```nohighlight
+a
+b
+c
+d
+...
+```
+
+---
+
+## Strings As Lists of Characters
+
+We'll sometimes say that "strings are lists"
+
+This is **true** in the sense that the operations of looping and using bracket notation are the same for lists as for strings
+
+This is not *entirely* true though. Why?
+
+**Hint:** What happens when I try to do this:
+
+```python
+name = "Chris"
+name[0] = 1
+```
+
+---
+
+class: center, middle
+
+# DON'T DO THIS
+
+---
+
+class: center, middle
+
+# WHY?
+
+---
+
+## Here's Why, Part 1
+
+Using bracket notation is more cumbersome than iterating over a list. Which looks better?
+
+```python
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+for i in range(len(alphabet)):
+    print(alphabet[i])
+```
+
+```python
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+for letter in alphabet:
+    print(letter)
+```
+---
+
+## Here's Why, Part 2
+
+Iterating over the collection directly allows us to name the iterator for the collection in a way that adds meaning/semantics
+
+```python
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+for i in range(len(alphabet)):
+    print(alphabet[i])
+```
+
+```python
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+for letter in alphabet:
+    print(letter)
+```
+
+---
+
+## But Maybe Sometimes You Can Do It
+
+In specific cases, you might need to use `range`, `len`, and indexes when looping over a string. Some specific examples:
+
+1. Reversing a string
+2. Printing every other character from a string
+
+---
+
+## Exercise, Part 1
+
+Write a program that:
+
+1. Prompt the user for a string
+2. Loop over the string, printing each letter on a different line
+
+---
+
+## Exercise, Part 1
+
+```python
+user_str = input("Enter a string: ")
+
+for char in user_str:
+    print(char)
+```
+
+---
+
+## Exercise, Part 2
+
+Modify your program so that it prints each letter on the same line. In other words, within the loop, build up a new string that has the same letters as the string input by the user.
+
+---
+
+## Exercise, Part 2
+
+```python
+user_str = input("Enter a string: ")
+new_str = ''
+
+for char in user_str:
+    new_str = new_str + char
+
+print(new_str)
+```
+
+---
+
+## Exercise, Part 3
+
+Modify your program so that it prints out the same string that the user entered, but with all lowercase 'a' characters removed.
+
+---
+
+## Exercise, Part 3
+
+```python
+user_str = input("Enter a string: ")
+new_str = ''
+
+for char in user_str:
+    if char != 'a':
+        new_str = new_str + char
+
+print(new_str)
+```
+
+</textarea><script type="text/javascript" src="../js/remark-latest.min.js"></script></body></html>
