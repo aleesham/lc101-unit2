@@ -127,6 +127,18 @@ print(first_char)
 
 ---
 
+## Negative Indexes
+
+We can also use a negative index with the bracket operator
+
+```python
+state = 'Missouri'
+last_char = state[-1]
+first_char = state[-8]
+```
+
+---
+
 ## The len Function
 
 The `len` function takes a string or list argument and returns the number of items in that collection
@@ -231,7 +243,7 @@ class: center, middle
 
 ## Here's Why, Part 1
 
-Using bracket notation is more cumbersome than iterating over a list. Which looks better?
+Using bracket notation is more cumbersome than iterating over a list. Which of these examples looks better?
 
 ```python
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
@@ -265,6 +277,21 @@ alphabet = 'abcdefghijklmnopqrstuvwxyz'
 for letter in alphabet:
     print(letter)
 ```
+
+---
+
+## Here's Why, Part 3
+
+```python
+first_name = "George"
+last_name = "Washington"
+
+# print out the last name, one char at a time
+for i in range(len(first_name)):
+    print(last_name[i])
+```
+
+What happens when we run this?
 
 ---
 
