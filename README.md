@@ -14,3 +14,4 @@ Lesson slides for LaunchCode's [Immersive CodeCamp](https://www.launchcode.org/c
 - [Conditionals](unit1/06_Conditionals.html)
 - [Ordered Collections](unit1/08_OrderedCollections.html)
 - [Problem Solving](unit1/ProblemSolving.html)
+- [Lists (Part 1)](unit1/10_Lists.html)
