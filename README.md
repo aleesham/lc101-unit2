@@ -15,3 +15,7 @@ Lesson slides for LaunchCode's [Immersive CodeCamp](https://www.launchcode.org/c
 - [Ordered Collections](unit1/08_OrderedCollections.html)
 - [Problem Solving](unit1/ProblemSolving.html)
 - [Lists (Part 1)](unit1/10_Lists.html)
+
+## Career Modules
+
+- [Learning Styles and Strategies](other/learning-styles.pdf)
