@@ -19,3 +19,4 @@ Lesson slides for LaunchCode's [Immersive CodeCamp](https://www.launchcode.org/c
 ## Career Modules
 
 - [Learning Styles and Strategies](other/learning-styles.pdf)
+- [Live Coding](other/live-coding.pdf)
