@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=UTF-8"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../css/slidestyles.css" type="text/css" media="screen" charset="utf-8">
+
+<!-- #ToDo: Change Title for the presentation -->
+<title>Intro to Relational Data</title>
+
+</head>
+
+<!-- #ToDo: Change 16:9 to 4:3 or vice versa, according to the current projector / screen -->
+<body onload="var slideshow = remark.create({ratio: '16:9', navigation: {scroll: true, touch: true, click: false}, countIncrementalSlides: false, highlightLanguage: 'bash', highlightStyle: 'tomorrow-night-blue'});">
+
+<!-- #ToDo: Write your slides in MarkDown here -->
+<textarea id="source">
+
+background-image: url(../images/codecamp.png)
+background-color: #cacaca
+
+---
+
+class: center, middle
+
+# Intro to Relational Data
+
+---
+
+## Relational Data
+
+**Relational data** is an approach to data storage in which related entities are stored in **tables**
+
+A specific relational database system is sometimes called a **relational database management system (RDBMS)**. Each RDBMS has it's a query language and it's own internal operations
+
+**Example:**
+
+SQL is a query language implemented by many database systems, including MySQL, Oracle, SQL Server
+
+---
+
+## Why Use RDBMS?
+
+- Storing data outside our applications allows it to be accessible by multiple applicaitons
+- Databases are better at managing data than programming languages (faster queries, specialized error handling, etc.)
+- Using special libraries within our applications will allow us to **not care** which RDBMS we're actually using
+
+---
+
+## Tables
+
+A **table** in an RDBMS is a structure for storing related data--e.g. all students in at a school, or all products in a store
+
+Tables have **structures** that define the characteristics of the data that they can store
+
+A **database** is a collection of related tables
+
+---
+
+## Table Structure
+
+```sql
+CREATE TABLE students (
+    id INTEGER PRIMARY KEY,
+    first VARCHAR(80),
+    last VARCHAR(80)
+);
+```
+
+This creates a table with 3 **columns** of type `INTEGER`, `VARCHAR(80)`, `VARCHAR(80)`
+
+---
+
+## Common Data Types
+
+- `VARCHAR` - strings of up to 255 characters (max length can be specified)
+- `TEXT` - much longer strings of characters (over 65k letters)
+- `INTEGER` - integers
+- `DECIMAL` - floating-point numbers
+- `BOOL` - Booleans (actually stored as 0 or 1)
+
+---
+
+## SQL Facts
+
+- It is _not_ case-sensitive; by convention many people write SQL keywords in all-caps which can help readability
+- All queries must end in a semi-colon `;`
+
+---
+
+## Query Review
+
+- `SELECT`
+- `INSERT`
+- `WHERE`
+- `ORDER BY`
+
+---
+
+## Keys
+
+**Primary keys** are unique identifiers assigned to each row of a table. We can use `AUTOINCREMENT` when defining a table to ensure that a unique value is automatically assigned on insertion
+
+A **foreign key** is a column value that corresponds to a primary key in another table. These define relationships within tables.
+
+</textarea><script type="text/javascript" src="../js/remark-latest.min.js"></script></body></html>
