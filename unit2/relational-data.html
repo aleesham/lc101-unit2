@@ -83,19 +83,213 @@ This creates a table with 3 **columns** of type `INTEGER`, `VARCHAR(80)`, `VARCH
 
 ---
 
-## Query Review
-
-- `SELECT`
-- `INSERT`
-- `WHERE`
-- `ORDER BY`
-
----
-
 ## Keys
 
 **Primary keys** are unique identifiers assigned to each row of a table. We can use `AUTOINCREMENT` when defining a table to ensure that a unique value is automatically assigned on insertion
 
 A **foreign key** is a column value that corresponds to a primary key in another table. These define relationships within tables.
+
+---
+
+## Joins
+
+Join clauses allow us to work with data from multiple tables, combining them in the same result set.
+
+### Join Types
+- Inner Join
+- Left Outer Join
+- Right Outer Join
+- Full Outer Join (not available in MySQL)
+
+---
+
+## Example Tables
+
+
+.left-column[
+**students**
+<img src="images/students-table.png" style="height:200px;"/>
+]
+
+.right-column[
+**advisors**
+<img src="images/advisors-table.png" style="height:200px;"/>
+]
+
+---
+
+## Inner Join
+
+```sql
+select * from students
+    inner join advisors on advisors.id=students.advisor_id;
+```
+
+<img src="images/inner-join.png" style="height:200px;"/>
+
+---
+
+## Left Outer Join
+
+```sql
+select * from students
+    left outer join advisors on advisors.id=students.advisor_id;
+```
+
+<img src="images/left-outer-join.png" style="height:200px;"/>
+
+---
+
+## Right Outer Join
+
+```sql
+select * from students
+    right outer join advisors on advisors.id=students.advisor_id;
+```
+
+<img src="images/right-outer-join.png" style="height:200px;"/>
+
+---
+
+## Like Clause
+
+Use `like` to match substrings within a column, in a case-insensitive way.
+
+```sql
+select * from advisors where department like 'cs';
+```
+
+--
+
+### Wildcards
+
+```sql
+select * from advisors where last like '%job%';
+```
+
+---
+
+## Column Modifiers
+
+When creating a table, we can apply constraints to the columns that we define. Data can not be inserted or updated if a constraint is violated.
+
+- `not null`
+- `unique`
+- `check`
+- `primary key`
+- `foreign key`
+- `auto_increment`
+
+---
+
+## Primary Keys Revisited
+
+Using `primary key` as a modifier on a column has the net effect of using all of:
+
+- `not null`
+- `unique`
+- Creating an "index" on the column, enabling fast lookup of values by the given column
+
+---
+
+## Updating Rows
+
+```sql
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+```
+
+---
+
+## Deleting Rows
+
+```sql
+DELETE FROM table_name
+WHERE condition;
+```
+
+---
+
+## SQL Injection
+
+Suppose we're running a query within a Python application. Our code might look something like this:
+
+```python
+name = request.form['name']
+query = 'insert into students (name) values (\'' + name + '\');'
+results = db.engine.execute(query)
+```
+
+--
+
+If a user fills out the form with `name` equal to something like `'Jane'`, then the query would be:
+
+```sql
+insert into students (name) values ('Jane');
+```
+
+---
+
+## SQL Injection
+
+A malicious user might fill out the form so that `name` was `'Jane\'); drop table students;'`
+
+--
+
+Our query then becomes the unintended:
+
+```sql
+insert into students (name) values ('Jane');
+drop table students;
+```
+
+---
+
+## More Injection
+
+```python
+id = request.form['id']
+query = 'select * from user_profile where user_id=' + id + ';'
+results = db.engine.execute(query)
+```
+
+--
+
+If a user fills out the form with `id` equal to something like `42`, then the query would be:
+
+```sql
+select * from user_profile where user_id=42;
+```
+
+---
+
+## More Injection
+
+A malicious user might fill out the form so that `id` was `42 or 1=1`
+
+--
+
+Our query then becomes the unintended:
+
+```sql
+select * from user_profile where user_id=42 or 1=1;
+```
+
+---
+
+## Little Bobby Tables
+
+<img src='images/bobby-tables.png' />
+
+---
+
+## Preventing SQL Injection
+
+There are different ways to "escape" various special characters, such as `'`, `%`
+
+--
+
+In practice, always use the tools provided within the framework that you're using to connect to and interact with a database to generate queries safely
 
 </textarea><script type="text/javascript" src="../js/remark-latest.min.js"></script></body></html>
