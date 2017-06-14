@@ -15,7 +15,12 @@ Lesson slides for LaunchCode's [Immersive CodeCamp](https://www.launchcode.org/c
 - [Ordered Collections](unit1/08_OrderedCollections.html)
 - [Problem Solving](unit1/ProblemSolving.html)
 - [Lists (Part 1)](unit1/10_Lists.html)
+
+## Unit 2: Web Fundamentals
+
+- [Hello, Flask! App (Annotated Code)](https://www.codesplain.io/chrisbay/hello_flask)
 - [Intro to Relational Data](unit2/relational-data.html)
+- [Basic Persistence in Flask (Annotated Code)](https://www.codesplain.io/chrisbay/get_it_done%21_app_-_persistence_setup)
 
 ## Career Modules
 
