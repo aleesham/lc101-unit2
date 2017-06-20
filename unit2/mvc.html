@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=UTF-8"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../css/slidestyles.css" type="text/css" media="screen" charset="utf-8">
+
+<!-- #ToDo: Change Title for the presentation -->
+<title>The MVC Pattern</title>
+
+</head>
+
+<!-- #ToDo: Change 16:9 to 4:3 or vice versa, according to the current projector / screen -->
+<body onload="var slideshow = remark.create({ratio: '16:9', navigation: {scroll: true, touch: true, click: false}, countIncrementalSlides: false, highlightLanguage: 'bash', highlightStyle: 'tomorrow-night-blue'});">
+
+<!-- #ToDo: Write your slides in MarkDown here -->
+<textarea id="source">
+
+background-image: url(../images/codecamp.png)
+background-color: #cacaca
+
+---
+
+class: center, middle
+
+# The Model-View-Controller Pattern
+
+---
+
+## Design Patterns
+
+From Wikipedia:
+
+- A **design pattern** is a general reusable solution to a commonly occurring problem within a given context in software design.
+--
+
+- It _is not_ a finished design that can be transformed directly into source or machine code.
+--
+
+- It _is_ a description or template for how to solve a problem that can be used in many different situations.
+--
+
+- Design patterns are formalized best practices that the programmer can use to solve common problems when designing an application or system.
+
+---
+
+## Where Is It Used?
+
+Lots of application frameworks are organized around MVC
+
+- Django (Python)
+- Ruby on Rails (Ruby)
+- Spring MVC (Java)
+- ASP.NET MVC (C#)
+
+---
+
+## Thinking about MVC
+
+We can break down the MVC pattern into:
+
+--
+
+### Components
+
+The three components--model, view, and controller--dictate how the code should be divided up.
+
+--
+
+### Interactions
+
+We can also discuss the ways that the three components interact.
+
+---
+
+## Model
+
+The **model** component consists of the application's behavior in terms of the problem domain.
+--
+
+- It is independent of the user interface.
+--
+
+- It directly manages the data, logic and rules of the application.
+--
+
+- Is often referred to as the "business logic" of an application
+
+---
+
+## Model Example
+
+For the Get It Done app, the model consists of:
+
+--
+
+- `User` class
+- `Task` class
+- ORM
+
+---
+
+## View
+
+The **view** component consists of the presentation of data to the end-user.
+
+- There can be multiple types of views for the same model (e.g. a web application, or a mobile application)
+
+--
+
+- Usually consists of presentation templates
+
+--
+
+- Should not contain any sophisticated logic
+
+--
+
+- Is independent of any specific data. For example, even if we _see_ a given task in a view, the view itself does not keep track of that data.
+
+---
+
+## View Example
+
+For the Get It Done app, the view consists of our templates:
+
+--
+
+- `base.html`
+- `login.html`
+- `register.html`
+- `todos.html`
+
+---
+
+## Controller
+
+The **controller** connects the model and the view.
+
+--
+
+- It is responsible for responding to user input, or requests.
+
+--
+
+- Puts data into, or asks for data from, the model
+
+--
+
+- Is the "traffic cop" of an MVC application
+
+---
+
+## Controller Examples
+
+For the Get It Done app, the controller consists of our request handlers:
+
+- `login`
+- `register`
+- `index`
+- ...
+
+---
+
+## Visualizing MVC
+
+<img src="images/mvc.png" style="height:500px;" />
+
+---
+
+## Interactions
+
+A **model** stores data that is retrieved according to commands from the **controller** and displayed in the **view**.
+
+--
+
+A **view** generates new output to the user based on changes in the **model**.
+
+--
+
+A **controller** can send commands to the **model** to update the model's state (e.g., editing a document). It can also send commands to its associated **view** to change the view's presentation of the model (e.g., scrolling through a document).
+
+---
+
+## Why?
+
+### Separation of Concerns
+
+MVC allows us to put unrelated tasks in different places, and related tasks in related places. For example, our model code doesn't need to care about how the model data is displayed.
+
+This also allows different developers to work on different portions with minimal impact on each other.
+
+---
+
+## Why? (cont)
+
+### Modularity
+
+Refactoring our code is much easier when components are isolated. For example, we could change the template system we use with minimal changes outside the View.
+
+### Organization
+
+As the size of our applications grows, having a strategy for organizing our code will make it easier to find and update code
+
+
+
+</textarea><script type="text/javascript" src="../js/remark-latest.min.js"></script></body></html>
