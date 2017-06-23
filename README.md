@@ -23,6 +23,7 @@ Lesson slides for LaunchCode's [Immersive CodeCamp](https://www.launchcode.org/c
 - [Basic Persistence in Flask (Annotated Code)](https://www.codesplain.io/chrisbay/get_it_done%21_app_-_persistence_setup)
 - [Model-View-Controller](unit2/mvc.html)
 - [Hashing](unit2/hashing.html)
+- [Agile Development](unit2/agile.html)
 
 ## Career Modules
 
