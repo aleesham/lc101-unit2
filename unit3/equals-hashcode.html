@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=UTF-8"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../css/slidestyles.css" type="text/css" media="screen" charset="utf-8">
+
+<!-- #ToDo: Change Title for the presentation -->
+<title>Implementing equals and hashCode</title>
+
+</head>
+
+<!-- #ToDo: Change 16:9 to 4:3 or vice versa, according to the current projector / screen -->
+<body onload="var slideshow = remark.create({ratio: '16:9', navigation: {scroll: true, touch: true, click: false}, countIncrementalSlides: false, highlightLanguage: 'bash', highlightStyle: 'tomorrow-night-blue'});">
+
+<!-- #ToDo: Write your slides in MarkDown here -->
+<textarea id="source">
+
+background-image: url(../images/codecamp.png)
+background-color: #cacaca
+
+---
+
+class: center, middle
+
+# Implementing equals and hashCode
+
+---
+
+## equals and equality
+
+Java provides a built-in `equals` method to use for checking for _equality_
+
+--
+
+The `==` operator checks for _identity_
+
+---
+
+## Using equals
+
+Given two objects that we want to compare, we should always use `equals` (unless we explicitely want to check for identity/sameness)
+
+```java
+if (student1.equals(student2)) {
+    // do something
+}
+```
+
+---
+
+## Default equals
+
+Every class has a default `equals` method. However, for classes that we write ourselves, this method will not be useful.
+
+For our `Student` class, with the default `equals`:
+
+```java
+// this will only be true if the two objects are identical
+boolean sameStudent = student1.equals(student2);
+```
+
+---
+
+## Implementing equals
+
+We should therefore always provide our own `equals` methods for our classes:
+
+```java
+public boolean equals(Object o) {
+    // code to check for equality
+}
+```
+
+Our method must have the **exact same signature** (i.e. first line) as shown here, otherwise it will not work as expected.
+
+---
+
+## Student Equality
+
+We get to decide when two objects are equal. So we might decide:
+
+```java
+public boolean equals(Object o) {
+    return o.getName().equals(this.getName());
+}
+```
+
+--
+
+However, there's a problem with this. Java perceives `o` to be of type `Object` and not `Student`, so it doesn't think that `o` has a `getName` method
+
+---
+
+## Fixing This: Step 1
+
+Cast `o` to be of type `Student`
+
+```java
+public boolean equals(Object o) {
+    Student studentToCompare = (Student) o;
+    return studentToCompare.getName().equals(this.getName());
+}
+```
+
+---
+
+## Fixing This: Step 2
+
+Ensuring `o` _can be_ cast to type `Student`
+
+```java
+public boolean equals(Object o) {
+
+    if (o.getClass() != getClass()) {
+        return false;
+    }
+
+    Student studentToCompare = (Student) o;
+    return o.getName().equals(this.getName());
+}
+```
+
+---
+
+## Fixing This: Step 3
+
+Ensuring `o` is not `null`
+
+```java
+public boolean equals(Object o) {
+
+    if (o == null) {
+        return false;
+    }
+
+    if (o.getClass() != getClass()) {
+        return false;
+    }
+
+    Student studentToCompare = (Student) o;
+    return o.getName().equals(this.getName());
+}
+```
+
+---
+
+## Fixing This: Step 4
+
+Finding out early if they are the same objects
+
+```java
+public boolean equals(Object o) {
+
+    if (o == this) {
+        return true;
+    }
+    if (o == null) {
+        return false;
+    }
+    if (o.getClass() != getClass()) {
+        return false;
+    }
+
+    Student studentToCompare = (Student) o;
+    return o.getName().equals(this.getName());
+}
+```
+
+---
+
+## A Good / Proper equals Method
+
+### Reflexive
+
+For any non-null reference value `x`, `x.equals(x)` should return `true`.
+
+--
+
+### Symmetryic
+
+It is symmetric: for any non-null reference values `x` and `y`, `x.equals(y)` should return `true` if and only if `y.equals(x)` returns true.
+
+---
+
+## A Good / Proper equals Method
+
+### Transitive
+
+For any non-null reference values `x`, `y`, and `z`, if `x.equals(y)` returns `true` and `y.equals(z)` returns `true`, then `x.equals(z)` should return `true`.
+
+--
+
+### Consistency
+
+As long as `x` and `y` do not change `x.equals(y)` should always return the same result.
+
+--
+
+### Non-null
+
+For any non-null reference value `x`, `x.equals(null)` should return `false`.
+
+---
+
+### The hashCode Method
+
+`hashCode` is a method related to `equals` that is used for "internal bookeeping" when we store our objects in collections.
+
+--
+
+When we provide our own `equals` method, we should also always provide our own `hashCode` method.
+
+--
+
+```java
+public int hashCode() {
+    // return an int generated from this
+}
+```
+
+---
+
+## Good hashCode Methods
+
+### Consistency
+
+When `hashCode` is called on the same object multiple times, it always returns the same value.
+
+--
+
+### Consistent with equals
+
+If `x.equals(y)` is `true`, then `x.hashCode() == y.hashCode()`.
+
+--
+
+### Less Restrict Than equals
+
+If `x.equals(y)` is `false`, then `x.hashCode()` and `y.hashCode()` don't have to be different.
+
+
+</textarea><script type="text/javascript" src="../js/remark-latest.min.js"></script></body></html>

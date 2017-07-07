@@ -25,6 +25,10 @@ Lesson slides for LaunchCode's [Immersive CodeCamp](https://www.launchcode.org/c
 - [Hashing](unit2/hashing.html)
 - [Agile Development](unit2/agile.html)
 
+## Unit 3: Java Web Development
+
+- [Implementing equals and hashCode](unit3/equals-hashcode.html)
+
 ## Career Modules
 
 - [Learning Styles and Strategies](other/learning-styles.pdf)
