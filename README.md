@@ -29,6 +29,10 @@ Lesson slides for LaunchCode's [Immersive CodeCamp](https://www.launchcode.org/c
 
 - [Implementing equals and hashCode](unit3/equals-hashcode.html)
 
+## Unit 4: Capstone Project
+
+- [Intro to JavaScript Part I: Vanilla JS](unit4/js-part1.html)
+
 ## Career Modules
 
 - [Learning Styles and Strategies](other/learning-styles.pdf)
