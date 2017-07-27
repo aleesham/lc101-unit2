@@ -32,6 +32,7 @@ Lesson slides for LaunchCode's [Immersive CodeCamp](https://www.launchcode.org/c
 ## Unit 4: Capstone Project
 
 - [Intro to JavaScript Part I: Vanilla JS](unit4/js-part1.html)
+- [Intro to JavaScript Part II: AJAX, Events, the DOM, and jQuery](unit4/js-part2.html)
 
 ## Career Modules
 

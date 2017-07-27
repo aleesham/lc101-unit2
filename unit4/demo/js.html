@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+        function initPage() {
+            var headingNode = document.getElementById("heading");
+            headingNode.textContent = "Hello";
+            headingNode.style.color = "red";
+            headingNode.style["background-color"] = "yellow";
+
+            document.getElementById("heading").onclick = function(){
+                alert("clicked!");
+            }
+
+        }
+
+        window.onload = initPage;
+        </script>
+    </head>
+    <body>
+        <h1 id="heading"></h1>
+    </body>
+</html>

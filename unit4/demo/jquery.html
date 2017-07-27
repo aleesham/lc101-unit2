@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script
+			  src="https://code.jquery.com/jquery-3.2.1.js"
+			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1 id="heading"></h1>
+
+    <style>
+        .yellow-bg {
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+
+    var initPage = function(){
+
+        var toggleBackground = function(){
+                $(this).toggleClass("yellow-bg");
+        };
+
+        var headingNode = $("#heading")
+            .text("Hello world!")
+            .css("color", "red")
+            .click(function(){
+                alert("hi there!");
+            })
+            .on("mouseover", toggleBackground)
+            .on("mouseout", toggleBackground);
+    };
+
+    $(document).ready(initPage);
+    </script>
+
+    </body>
+</html>
