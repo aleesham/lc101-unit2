@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang=en><head><meta http-equiv=Content-Type content="text/html; charset=UTF-8"><meta name=viewport content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../css/slidestyles.css" type="text/css" media="screen" charset="utf-8">
+
+<!-- #ToDo: Change Title for the presentation -->
+<title>Unit Testing</title>
+
+</head>
+
+<!-- #ToDo: Change 16:9 to 4:3 or vice versa, according to the current projector / screen -->
+<body onload="var slideshow = remark.create({ratio: '16:9', navigation: {scroll: true, touch: true, click: false}, countIncrementalSlides: false, highlightLanguage: 'bash', highlightStyle: 'tomorrow-night-blue'});">
+
+<!-- #ToDo: Write your slides in MarkDown here -->
+<textarea id="source">
+
+background-image: url(../images/codecamp.png)
+background-color: #cacaca
+
+---
+
+class: center, middle
+
+# Unit Testing
+
+---
+
+## Why Test?
+
+- A strong set of tests allows for "safe refactoring"
+--
+
+- Identify bugs early in the development process
+--
+
+- It's easier to identify the cause of broken code
+--
+
+- Good tests make for a "self-documenting" application
+--
+
+- Used with test-driven development strategies, they enable productive, positive planning and coding
+
+---
+
+## What is a "unit"?
+
+The answer depends on who you ask. Here are some answers from the Internet:
+
+- An individual function
+--
+
+- An individual class
+--
+
+- An individual "module"
+--
+
+- The smallest testable unit of work
+
+--
+
+For now, we'll mostly avoid trying to provide a precise answer while we get a feel for unit testing. If you like, you can think of a "unit" as:
+
+> _A single, clearly-stated, desired behavior_
+
+
+---
+
+## Test-Driven Development
+
+- Unit testing is part of a larger development approach known as *test-driven development (TDD)*
+--
+
+- Unit testing _is not_ TDD in and of itself. Many use unit tests while not following strict TDD practices.
+--
+
+- Even if you don't use strict TDD, following the **red-green-refactor** motto is useful:
+
+<img src="images/red-green-refactor.png" style="max-height:250px;" />
+
+
+---
+
+## What to Test
+
+- "Sunny day" or "happy path" scenarios for your methods
+--
+
+- Edge cases and unexpected inputs: postive/negative/0, `null`, etc
+--
+
+- Validation
+--
+
+- Exceptions are thrown when desired
+
+---
+
+## What Not to Test
+
+- Getters and setters (usually)
+--
+
+- 3rd-party code
+
+
+---
+
+## JUnit
+
+JUnit is the most widely-used Java unit testing framework, and has been the inspiration for dozens of other unit testing frameworks since it was first developed in the late '90s.
+
+<img src="images/junit.png" style="max-height:300px" />
+
+---
+
+## Unit Test Components
+
+### Test
+
+A single test method, annotated with `@Test`
+
+--
+
+### Fixture
+
+A single class containing tests
+
+--
+
+### Test Runner
+
+A library that runs tests and produces a report. For us, this is JUnit.
+
+---
+
+## Getting Ready to Test
+
+In a Spring Boot project, you'll already have everything set up for you to create tests in `src/test/java`.
+
+--
+
+For a plain Java project, you can get started testing by:
+
+--
+
+1. Creating a `tests` folder at the top level of the project
+1. Selecting _File > Project Structure > Modules_ and marking this folder as "Tests" or "Test Root" folder
+1. Putting each test fixture in a well-named class (e.g. test for the class `Model` could go in `ModelTests`), which resides in the same package as the class being tested.
+
+--
+
+To run the tests, right-click on the `tests` folder and select _Run All Tests_
+
+---
+
+## Writing a Test
+
+A single test is a public method annotated with `@Test` that returns `void`:
+
+```java
+public class ModelTests {
+
+    @Test
+    public void ensureSkyIsBlue() {
+        // code to execute test
+    }
+
+}
+```
+
+---
+
+## Assertions
+
+Tests are built on the concept of **assertions**. An assertion is how we, as the programmer designing the test, state the expected outcome of an action.
+
+--
+
+```java
+public class ModelTests {
+    @Test
+    public void ensureSkyIsBlue() {
+        Sky sky = new Sky();
+        assertEquals("blue", sky.getColor());
+    }
+}
+```
+
+--
+
+The first value of an assertion is the **expected** value, while the second is the **actual** value
+
+---
+
+## Some JUnit Assertions
+
+There are lots of types of assertions provided by JUnit. Here are a few:
+
+- `assertEquals`
+--
+
+- `assertFalse` and `assertTrue`
+--
+
+- `assertNull` and `assertNotNull`
+--
+
+- `fail` - an "assertion" that always fails
+
+---
+
+## Negative Testing
+
+At times we may want to test that an exception is thrown in a given situation, for example when validating values provided to a method or object. One way to do this is as follows:
+
+--
+
+```java
+@Test
+public void ensureValidationExceptionThrown() {
+    try {
+        // some code that we expect to throw an exception
+        fail();
+    } catch (SomeException e) {
+        // do nothing
+    }
+}
+```
+
+---
+
+## Better Negative Testing
+
+JUnit provides a better way to do this:
+
+```java
+@Test(expected = SomeException.class)
+public void ensureValidationExceptionThrown() {
+    // some code that we expect to throw an exception
+}
+```
+
+---
+
+## Setting Up and Tearing Down
+
+Within a test fixture, we can encapsulate repeated behavior needed for each test within methods annotated with `@Before` and `@After`:
+
+```java
+@Before
+public void createInitialObjects() {
+    // code to run before *each* individual test method
+}
+```
+
+--
+
+```java
+@After
+public void cleanupStuff() {
+    // code to run before *after* individual test method
+}
+```
+
+---
+
+## Setting Up and Tearing Down
+
+Some common tasks to put inside these methods:
+
+- Create test object(s)
+--
+
+- Set up / close a database connection
+--
+
+- Read in settings, or other framework-specific initialization
+
+---
+
+## Notes on Setting Up and Tearing Down
+
+_Note 1_: Historically, these methods had to be called `setUp` and `tearDown`, and while these terms are used to generally refer to them, it is no longer required in JUnit for you to use these names.
+
+_Note 2_: Remember that these methods will run before and after _each_ test method. If you want behavior(s) to run before or after _all_ methods in the fixture, use `@BeforeClass` or `@AfterClass`. Most often, these latter annotations/methods are not really needed and should be avoided.
+
+---
+
+## Best Practices
+
+- Avoid multiple assertions in a single test
+--
+
+- Keep code DRY by using `@Before` and `@After`
+--
+
+- Tests should be repeatable (e.g. avoid generating random test data)
+--
+
+- Tests should run quickly
+--
+
+- You should run your tests regularly, and only commit code with passing unit tests
+
+---
+
+## Other Types of Tests
+
+### Integration Testing
+
+Tests functionality that spans multiple units or modules.
+
+**Example:** After submitting valid form data, a new entity is saved to the database and I receive a confirmation message.
+
+--
+
+### Functional Testing
+
+Tests that the software meets all requirements, as specified by the client
+
+--
+
+### Performance Testing
+
+Tests that the software performs as desired under realistic load and environmental situations
+
+--
+
+And [many more](https://www.codeproject.com/tips/351122/what-is-software-testing-what-are-the-different-ty)...
+
+---
+
+## Resources
+
+[Test-Driven Development (Wikipedia)](https://en.wikipedia.org/wiki/Test-driven_development)
+
+[JUnit4 Documentation](http://junit.org/junit4/javadoc/latest/)
+
+[JUnit4 Assertions](http://junit.org/junit4/javadoc/latest/)
+
+[What is a "unit" in Unit Testing?](https://dev.to/ruidfigueiredo/what-exactly-is-a-unit-in-unit-testing)
+
+[Unit Testing in Java (Treehouse Course)](https://teamtreehouse.com/library/unit-testing-in-java)
+
+</textarea><script type="text/javascript" src="../js/remark-latest.min.js"></script></body></html>

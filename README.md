@@ -34,6 +34,7 @@ Lesson slides for LaunchCode's [Immersive CodeCamp](https://www.launchcode.org/c
 - [Intro to JavaScript Part I: Vanilla JS](unit4/js-part1.html)
 - [Intro to JavaScript Part II: AJAX, Events, the DOM, and jQuery](unit4/js-part2.html)
 - [Advanced Git](unit4/advanced-git.html)
+- [Unit Testing](unit4/unit-testing.html)
 
 ## Career Modules
 
