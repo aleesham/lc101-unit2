@@ -195,6 +195,10 @@ body {
     font-size: 24px;
 }
 
+.remark-inline-code {
+    color: #f47753;
+}
+
 .hljs-tomorrow-night-blue .hljs {
     background-color: rgba(33,33,33,.85) !important; /* override Highlight.js's "Tomorrow Night Blue" background color for consistency */
     border-left: 0.225em solid #fff;
@@ -312,5 +316,5 @@ body {
 }
 
 strong {
-  color: #f0400f;
+  color: #f47753;
 }
