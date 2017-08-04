@@ -36,6 +36,7 @@ Lesson slides for LaunchCode's [Immersive CodeCamp](https://www.launchcode.org/c
 - [Advanced Git](unit4/advanced-git.html)
 - [Unit Testing](unit4/unit-testing.html)
 - [Dependency Injection](unit4/di.html)
+- [Deploying Your Java App](unit4/deploying.html)
 
 ## Career Modules
 
