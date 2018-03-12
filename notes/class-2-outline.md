@@ -6,6 +6,7 @@
 - Git
 - Studio Walkthrough
 
+- Reminder: I will not be here next class period because I will be out of town for work. 
 
 
 # Questions Slide?
