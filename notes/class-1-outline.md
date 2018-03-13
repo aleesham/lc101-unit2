@@ -99,8 +99,7 @@ open dev tools using shift+ctrl+i
 Inspector: highlight over html to see what html elements goes with what on page
 Top left: Cursor button to highlight the pic to do the reverse
 Actually edit something: Title and picture
-
-href: http://www.akc.org/content/entertainment/articles/cute-puppies
+gihref: http://www.akc.org/content/entertainment/articles/cute-puppies
 picture: https://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/154/20/87788187.jpg
 
 
