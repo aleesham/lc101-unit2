@@ -6,6 +6,7 @@
 - Git
 - Studio Walkthrough
 
+# Reminders Slide
 - Reminder: I will not be here next class period because I will be out of town for work. 
 
 
@@ -21,14 +22,18 @@
 - The rules between tags versus tags with classes vs tags with ids. We will talk about this later
 
 # Elements have default syles
-- for example....
+- Nothing to add here really. 
 
 # Changing an Elements Style
 - Using styles (pre-defined)
 
-# Style attribute of an element
+# Use style attribute of an element
 - Show example of changing elements inline
 - Avoid this
+
+# Example example.html
+
+<!--TO DO-->
 
 # Where to put your CSS
 - Style HTML tag (Provide example: (CODE THIS IN FRONT OF THEM))
