@@ -7,19 +7,21 @@
 - Studio Walkthrough
 
 
-# About Me
+# About Me (Intro Slide)
 - Aleesha, TF for Unit 1. I went through LC CodeCamp last summer. It was sweet. If you ever want to chat about it, you can hit me up on Slack.
 - MY ROLE HAS CHANGED in LC101 AND I AM STARTING A JOB. I will NOT be answering questions like I did last unit. You have individual TF groups now. Your TFs should be your second resource behind trying to answer your own question. 
 
 
-# About Unit 2
-- You are expected to finish class Prep before Unit 2. I will not lecture on absolutely everything, but key points will be discussed. Questions and participation during lecture are encouraged. You should not be coding during lecture really, unless it is something quick (like today when we talk about Git)
+# About Unit 2 (Intro Slide)
+- You are expected to finish class Prep before each class. I will not lecture on absolutely everything, but key points will be discussed. Questions and participation during lecture are encouraged. You should not be coding tpp much during lecture really, unless it is something quick (like today when we talk about Git)
 - You SHOULD be coding with the prep videos. Pause when necessary. It makes assignments way more approachable.
 - Class will be run as follows: Studio answer, lecture, studio walkthrough, studio.
+
+
+
+# Questions Slide
 - Questions before we begin the lecture?
 - If you have not downloaded firefox, do it now so it is ready to go by the end of the lecture. 
-
-# (TF Slide)
 
 # About the Web, HTML
 - I will not talk about this. You are expected to read this stuff. If you have questions, google is your friend. Or ask your TF. 
@@ -49,12 +51,12 @@ This is one way you can visualize a VCS. You have your master branch (in this ca
 
 # (What is commiting?)
 - add (stage) vs commit (committing)
-- write some easy code (with a bug)
+- write some easy code (with a bug) (for loop accumulation sum)
 - git add temp.py
 - git commit -m "began code"
 - fix code
 - git add temp.py
-- git commit -m "fixed iteration code to add correctly"
+- git commit -m "fixed itertion code to add correctly"
 - git log
 
 # (Local Repo vs Remote Repo)
@@ -70,7 +72,6 @@ This is one way you can visualize a VCS. You have your master branch (in this ca
 # END OF SLIDES
 
 ## DO A git TUTORIAL QUICKLY?
-(Write this up)
 cd ~
 mkdir temp
 cd temp
@@ -92,7 +93,8 @@ git -m "fixed *2 to **2"
 
 ## Studio Walkthrough
 Open firefox
-open dev tools using gear
+Go to NYtimes
+open dev tools using hamburger>web dev>inspector
 open dev tools using shift+ctrl+i
 Inspector: highlight over html to see what html elements goes with what on page
 Top left: Cursor button to highlight the pic to do the reverse
@@ -103,3 +105,8 @@ picture: https://img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/art
 
 
 View source vs inspector
+
+
+
+# (TF Slide)
+- Introduce the TFs
