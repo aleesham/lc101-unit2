@@ -31,13 +31,58 @@
 - Show example of changing elements inline
 - Avoid this
 
-# Example example.html
+<!--Example:-->
+# Example example1.html
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1 style="color: red;">Hello, World!</h1>
+    </body>
+</html>
 
-<!--TO DO-->
+<!-- end example -->
 
 # Where to put your CSS
 - Style HTML tag (Provide example: (CODE THIS IN FRONT OF THEM))
 - .css file (CODE AND CREATE IN FRONT OF THEM)
+
+<!--Examples:-->
+# Example example2.html, example3.html, stylesheet.css
+
+<!--example2.html-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+	        p {
+		        color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Hello, World!</p>
+    </body>
+</html>
+
+<!--example3.html and stylesheet.css-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/stylesheet1.css">
+    </head>
+    <body>
+        <p>Hello, World!</p>
+    </body>
+</html>
+p {
+    color: red
+}
+
+<!-- end examples -->
 
 # CSS Selectors
 - element is the default to the browser
@@ -47,6 +92,52 @@
 
 # ID Selector
 - show examples of this on slide and in VS Code
+
+<!--Examples:-->
+# Example example4.html, stylesheet2.css
+
+
+<!--example4.html and stylesheet2.css-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/stylesheet.css">
+    </head>
+    <body>
+        <h1 id="main-page-title" class="section-title">Hello, World!</h1>
+        <p class="content">This is some stuff.</p>
+        <hr/>
+        <h2 class="section-title">Hello, USA!</h2>
+        <p class="content">This is more stuff.</p>        
+    </body>
+</html>
+
+h1 {
+    color: blue
+}
+
+.content {
+    text-align: center;
+    font-weight: bold;
+}
+
+.section-title {
+    color: brown;
+    font-size: 20px;
+    text-align: center;
+}
+
+#main-page-title {
+    font-size: 40px;
+    color: red;
+}
+
+
+<!-- end examples -->
+
+
+<!--TODO-->
 
 # Branching in Git
 - show examples of branching 
