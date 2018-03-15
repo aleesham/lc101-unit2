@@ -6,33 +6,16 @@
 - Git
 - Studio Walkthrough
 
-# Reminders Slide
-- Reminder: I will not be here next class period because I will be out of town for work. 
+----------------------------------------------------------------
 
+<!-- Example 1 -->
+- Gitbash-> cd lc101/class2/examples
+- touch example1.html
+- code .
+- . is shorthand for the current directory
+- Explain what you are doing as you work with command line.
+- Have students help you write HTML template.
 
-# Questions Slide?
-
-# Introduction Slide
-- I will not talk much about HTML.
-- I will talk about CSS in depth.
-- I will talk about Git branching and merging which are both important for our studio.
-
-# What is CSS?
-- You should have read about this.
-- The rules between tags versus tags with classes vs tags with ids. We will talk about this later
-
-# Elements have default syles
-- Nothing to add here really. 
-
-# Changing an Elements Style
-- Using styles (pre-defined)
-
-# Use style attribute of an element
-- Show example of changing elements inline
-- Avoid this
-
-<!--Example:-->
-# Example example1.html
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,16 +25,12 @@
     </body>
 </html>
 
-<!-- end example -->
+----------------------------------------------------------------
 
-# Where to put your CSS
-- Style HTML tag (Provide example: (CODE THIS IN FRONT OF THEM))
-- .css file (CODE AND CREATE IN FRONT OF THEM)
-
-<!--Examples:-->
-# Example example2.html, example3.html, stylesheet.css
-
-<!--example2.html-->
+<!-- Example 2 -->
+- cd lc101/class2/examples
+- touch example2.html
+- code .
 
 <!DOCTYPE html>
 <html>
@@ -67,7 +46,16 @@
     </body>
 </html>
 
-<!--example3.html and stylesheet1.css-->
+----------------------------------------------------------------
+
+<!-- Example 3 -->
+- cd lc101/class2/examples
+- touch example3.html
+- mkdir css (we often will organize a css dir to hold all .css files for a project)
+- cd css
+- touch stylesheet1.css
+- code ..
+- .. is short hand for our parent directory
 
 <!DOCTYPE html>
 <html>
@@ -82,22 +70,15 @@ p {
     color: red
 }
 
-<!-- end examples -->
+-----------------------------------------------------------------
 
-# CSS Selectors
-- element is the default to the browser
-
-# Class Selector
-- show examples of this on slide and in VS Code
-
-# ID Selector
-- show examples of this on slide and in VS Code
-
-<!--Examples:-->
-# Example example4.html, stylesheet2.css
-
-
-<!--example4.html and stylesheet2.css-->
+<!-- Example 4 -->
+- cd lc101/class2/examples
+- touch example4.html
+- cd css 
+- touch stylesheet2.css
+- cd ..
+- code .
 
 <!DOCTYPE html>
 <html>
@@ -134,12 +115,8 @@ h1 {
 }
 
 
-<!-- end examples -->
+<!-- Git Local Example -->
 
-
-<!--TODO-->
-
-# GIT EXAMPLE I FORGOT
 cd ~
 mkdir temp
 cd temp
@@ -165,19 +142,21 @@ Clone HTML-Me-Something as well and Flicklist
 git clone (find my repo on github to use for branching and merging.)
 git clone (find the LC repo on github to show more branching ideas.)
 
-# Branching in Git
-- show examples of branching 
-- Use Unit-1 Stuff 
-- Use HTML-Me-Something to create a new branch, change something in CSS and HTML that will affect the merge, add and commit files separately.
+- Mention we will work with this stuff again later.
 
-# Merging in Git
+<!-- TODO -->
+
+<!-- Example of Branching (HTML-Me-Something) -->
+- Show how to create a new branch and look at what branches we have locally.
+- Why we want a new "development" branch
+- show it is hosted somewhere online (Mention bonus mission)
+
+<!-- Example of Branching (Flicklist) -->
+- Mention that this will be an important repository
+- Show branches we have (why would we want these)
+- Checkout branches
+- list branches
+
+<!-- Example of Merging (HTML-Me-Something) -->
 - Show example of merging with a conflict using HTML-Me-Something
-
-# Studio Walkthough
-- We will work in pairs to create a story one sentence at a time. 
-- Why GitHub (remote repositories) are important.
-- I won't do any coding/initializing here as the directions are outlined very well. 
-- Please find a partner in your groups. 
-- If you have an odd number, have one person pair with another group with an odd number of people, or with a TF. 
-
 
