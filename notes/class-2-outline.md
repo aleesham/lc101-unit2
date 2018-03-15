@@ -67,7 +67,7 @@
     </body>
 </html>
 
-<!--example3.html and stylesheet.css-->
+<!--example3.html and stylesheet1.css-->
 
 <!DOCTYPE html>
 <html>
@@ -102,7 +102,7 @@ p {
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="css/stylesheet.css">
+        <link rel="stylesheet" href="css/stylesheet2.css">
     </head>
     <body>
         <h1 id="main-page-title" class="section-title">Hello, World!</h1>
@@ -138,6 +138,32 @@ h1 {
 
 
 <!--TODO-->
+
+# GIT EXAMPLE I FORGOT
+cd ~
+mkdir temp
+cd temp
+git init
+touch file.py
+git status
+code file.py
+(write a python file to square a number (write it wrong))
+git status
+git add .
+git status
+git commit -m "first commit"
+python file.py
+(fix error)
+python file.py 
+git status
+git add .
+git -m "fixed *2 to **2"
+
+- All local stuff so far. 
+
+Clone HTML-Me-Something as well and Flicklist
+git clone (find my repo on github to use for branching and merging.)
+git clone (find the LC repo on github to show more branching ideas.)
 
 # Branching in Git
 - show examples of branching 
