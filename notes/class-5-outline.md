@@ -43,13 +43,17 @@ crossoff_form = """
     </form>
 """
 
-<!-- Summary -->
 
+
+<!-- TODO -->
+
+<!-- Summary -->
+- Validation
+- Redirects
+- HTML Escaping
 
 <!-- Q&A -->
 CREATE EXAMPLES POSSIBLY FOR SUMMARY
-
-
 
 
 <!-- Studio Walkthough -->
