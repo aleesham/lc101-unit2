@@ -144,8 +144,6 @@ git clone (find the LC repo on github to show more branching ideas.)
 
 - Mention we will work with this stuff again later.
 
-<!-- TODO -->
-
 <!-- Example of Branching (HTML-Me-Something) -->
 - Show how to create a new branch and look at what branches we have locally.
 - Why we want a new "development" branch
@@ -166,16 +164,40 @@ git clone (find the LC repo on github to show more branching ideas.)
 - list branches
 
 - cd flicklist
-- git branch (why is there only the master branch, how do we access remote branches)
+- git branch (why is there only the master branch, how do we access remote branches? google it?)
+- git branch -a
 - git checkout walkthrough1
 - git branch
 - git checkout studio1
 - git branch
 
-- we will use this next class
+- we will use this repo and these git commands next class
 
 
 <!-- Example of Merging (HTML-Me-Something) -->
 - Show example of merging with a conflict using HTML-Me-Something
 
+- cd ~/lc101/html-me-something
+- git checkout development
+- code . (change main-title class to id and change background color)
+- git add .
+- git commit -m "changed main-title to id and changed bg color"
+- git merge master
+- git checkout master
+- git merge development
+- code . (change background color)
+- git add .
+- git commit -m "changed bg color"
+- git checkout development 
+- code . (change background color)
+- git add .
+- git commit -m "changed bg color"
+- git merge master (MERGE CONFLICTS, FIX)
+- git add .
+- git commit -m "used main-title color from master"
+- git status
+- git merge master
+- git checkout master
+- git merge development
+- git push origin master
 
