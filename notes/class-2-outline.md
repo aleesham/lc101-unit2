@@ -151,12 +151,31 @@ git clone (find the LC repo on github to show more branching ideas.)
 - Why we want a new "development" branch
 - show it is hosted somewhere online (Mention bonus mission)
 
+- cd html-me-something
+- git branch
+- git branch development (because it is hosted somewhere)
+- git branch
+
+- we will work more this when merging
+
+
 <!-- Example of Branching (Flicklist) -->
 - Mention that this will be an important repository
-- Show branches we have (why would we want these)
+- Show branches (remotely) we have (why would we want these)
 - Checkout branches
 - list branches
 
+- cd flicklist
+- git branch (why is there only the master branch, how do we access remote branches)
+- git checkout walkthrough1
+- git branch
+- git checkout studio1
+- git branch
+
+- we will use this next class
+
+
 <!-- Example of Merging (HTML-Me-Something) -->
 - Show example of merging with a conflict using HTML-Me-Something
+
 
