@@ -139,6 +139,7 @@ git -m "fixed *2 to **2"
 - All local stuff so far. 
 
 Clone HTML-Me-Something as well and Flicklist
+cd ~/lc101/class2
 git clone (find my repo on github to use for branching and merging.)
 git clone (find the LC repo on github to show more branching ideas.)
 
@@ -153,6 +154,7 @@ git clone (find the LC repo on github to show more branching ideas.)
 - git branch
 - git branch development (because it is hosted somewhere)
 - git branch
+- git checkout development
 
 - we will work more this when merging
 
@@ -163,13 +165,14 @@ git clone (find the LC repo on github to show more branching ideas.)
 - Checkout branches
 - list branches
 
-- cd flicklist
+- cd flicklist-flask
 - git branch (why is there only the master branch, how do we access remote branches? google it?)
 - git branch -a
 - git checkout walkthrough1
 - git branch
 - git checkout studio1
 - git branch
+- git branch -a
 
 - we will use this repo and these git commands next class
 
@@ -178,26 +181,36 @@ git clone (find the LC repo on github to show more branching ideas.)
 - Show example of merging with a conflict using HTML-Me-Something
 
 - cd ~/lc101/html-me-something
-- git checkout development
+- start index.html
 - code . (change main-title class to id and change background color)
+- git status
+- git add index.html
+- git commit -m "changed main-title class to id"
+- git status
 - git add .
-- git commit -m "changed main-title to id and changed bg color"
-- git merge master
+- git commit -m "edited main-title, body bg color"
+- git status
+- git merge master (nothing happens because we edited from master)
 - git checkout master
-- git merge development
+- git merge development (updated, but no merge conflicts since not both were edited)
+
 - code . (change background color)
+- git status
 - git add .
-- git commit -m "changed bg color"
+- git commit -m "changed main-title color"
 - git checkout development 
-- code . (change background color)
+- code . (change main-title color)
+- git status
 - git add .
-- git commit -m "changed bg color"
+- git commit -m "changed main-title color"
 - git merge master (MERGE CONFLICTS, FIX)
+- git status
 - git add .
 - git commit -m "used main-title color from master"
 - git status
 - git merge master
 - git checkout master
 - git merge development
+- git status
 - git push origin master
 
