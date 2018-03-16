@@ -32,7 +32,7 @@ crossoff_form = """
     <form action="/crossoff" method="post">
         <label for="crossed-off-movie">
             I want to cross off
-            <select type="text" id="crossed-off-movie" name="crossed-off-movie">
+            <select id="crossed-off-movie" name="crossed-off-movie">
                 <option>Begin Again</option>
                 <option>Big Fish</option>
                 <option>Pulp Fiction</option>
