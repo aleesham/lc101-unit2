@@ -2,6 +2,10 @@
 
 <!-- Studio Solution -->
 
+<!-- TODO -->
+ADD IN THE COMMAND LINE NOTES
+<!-- TODO -->
+
 line 25: movie_list = ["The Big Lebowski", "Princess Mononoke", "The Princess Bride", "Star Wars", "Begin Again"]
 
 line 2: import random
@@ -26,9 +30,15 @@ questions?
 CREATE EXAMPLES POSSIBLY FOR SUMMARY
 NOTES FOR STUDIO WALKTHROUGH
 
+<!-- TODO --> Talk more about git and version controol?
 
 <!-- Studio Walkthrough -->
 - GO TO LAUNCHCODES PAGE AND READ WHAT WE WILL DO
+
+<!-- TODO -->
+ADD IN THE COMMAND LINE NOTES
+<!-- TODO -->
+
 
 - add page_header and page_footer for organization purposes:
 
