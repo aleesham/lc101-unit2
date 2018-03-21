@@ -1,3 +1,7 @@
+TODOs
+lines 60-66
+
+
 <!-- Reminders -->
 
 <!-- Studio Solution -->
@@ -47,17 +51,19 @@ crossoff_form = """
 """
 
 
+<!-- Summary -->
+- Validation
+- Redirects
+- HTML Escaping
+- URLs
 
 <!-- TODO -->
 1. Put Validate Time code on my machine
 2. Put Hello _____ on my Machine.
 
-<!-- Summary -->
-- Validation
-- Redirects
-- HTML Escaping
-
 <!-- Q&A -->
+3. ADD urllib.parse.urlencode example with Hello World
+Use the above three to Create Examples
 
 
 <!-- Studio Walkthough -->
@@ -103,13 +109,15 @@ crossoff_form = """
         - return redirect("/?error={}".format(error))
 
 <!-- CODE -->
+from urllib.parse import encode 
+
 if crossed_off_movie not in get_current_watchlist():
     # the user tried to cross off a movie that isn't in their list,
     # so we redirect back to the front page and tell them what went wrong
-    error = "'{0}' is not in your Watchlist, so you can't cross it off!".format(crossed_off_movie)
-
+    message = "'{0}' is not in your Watchlist, so you can't cross it off!".format(crossed_off_movie)
+    error = urlencode({"error" : message})
     # redirect to homepage, and include error as a query parameter in the URL
-    return redirect("/?error=" + error)
+    return redirect("/?" + error)
 <!-- CODE -->   
     
     - display error message
