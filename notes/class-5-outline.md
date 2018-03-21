@@ -1,6 +1,9 @@
 <!-- Reminders -->
 
 <!-- Studio Solution -->
+cd ~/lc101/flicklist
+git checkout studio2
+
 1. Add a crossoff form. Line 40
 
 crossoff_form = """
@@ -46,6 +49,8 @@ crossoff_form = """
 
 
 <!-- TODO -->
+1. Put Validate Time code on my machine
+2. Put Hello _____ on my Machine.
 
 <!-- Summary -->
 - Validation
