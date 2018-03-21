@@ -58,7 +58,75 @@ crossoff_form = """
 - HTML Escaping
 
 <!-- Q&A -->
-CREATE EXAMPLES POSSIBLY FOR SUMMARY
 
 
 <!-- Studio Walkthough -->
+READ THE STUDIO WALKTHROUGH
+ADD SOME (At least two) TODOS IN THE CODE
+
+
+1. Write a function where we can fetch the user's watchlist.
+    - Rather than hardcode, we will dynamically do this.
+        - write the function hardcoding a return list
+
+<!-- CODE --> 
+def get_current_watchlist():
+    # returns user's current watchlist--hard coded for now
+    return [ "Star Wars", "Minions", "Freaky Friday", "My Favorite Martian" ]
+<!-- CODE -->
+    - Use the str.format method
+        - write loop to hardcode the options for the select piece
+        - rewrite the crossoff_form list and use str.format with the last piece
+<!-- CODE -->
+crossoff_options = ""
+for movie in get_current_watchlist():
+    crossoff_options += '<option value="{0}">{0}</option>'.format(movie)
+
+crossoff_form = """
+    <form action="/crossoff" method="post">
+        <label>
+            I want to cross off
+            <select name="crossed-off-movie"/>
+                {0}
+            </select>
+            from my watchlist.
+        </label>
+        <input type="submit" value="Cross It Off"/>
+    </form>
+""".format(crossoff_options)
+
+<!-- CODE -->
+2. Add some validation on crossoff route
+    - make sure movie is on list first (if movie not in....)
+    - else redirect to the home page with query error message. Note spaces are not allowed in URLs
+        - (if movie not in.... create error)
+        - return redirect("/?error={}".format(error))
+
+<!-- CODE -->
+if crossed_off_movie not in get_current_watchlist():
+    # the user tried to cross off a movie that isn't in their list,
+    # so we redirect back to the front page and tell them what went wrong
+    error = "'{0}' is not in your Watchlist, so you can't cross it off!".format(crossed_off_movie)
+
+    # redirect to homepage, and include error as a query parameter in the URL
+    return redirect("/?error=" + error)
+<!-- CODE -->   
+    
+    - display error message
+        - edit index route to include errors
+
+<!-- CODE -->
+error = request.args.get("error")
+if error:
+    error_esc = cgi.escape(error, quote=True)
+    error_element = '<p class="error">' + error_esc + '</p>'
+else:
+    error_element = ''
+
+# combine all the pieces to build the content of our response
+main_content = edit_header + add_form + crossoff_form + error_element
+
+ <!-- CODE -->   
+    
+
+3. Why is this necessary? Doesn't the Drop Down prevent this from happening? Nope, because we can edit HTML uysing Dev tools. 
