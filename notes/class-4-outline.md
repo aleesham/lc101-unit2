@@ -1,34 +1,55 @@
 <!-- Reminders -->
 
 <!-- Studio Solution -->
+cd ~/lc101/flicklist
+git checkout studio1
+
+<!-- TODO1  -->
 
 line 25: movie_list = ["The Big Lebowski", "Princess Mononoke", "The Princess Bride", "Star Wars", "Begin Again"]
 
 line 2: import random
 
+<!-- TODO2  -->
 line 27: return "The Big Lebowski" ----> return random.choice(movie_list)
 
+<!-- TODO3  -->
 line 11: todays_movie = get_random_movie()
 line 17: change movie to todays_movie
 
 line 12: tomorrows_movie = get_random_movie()
 
-Update last TODO
-
-questions?
 
 
-<!-- Summary -->
+<!-- Summary and Q&A -->
+CREATE EXAMPLES POSSIBLY FOR SUMMARY (GET AND POST?)
+GET: go to google using private window and mozilla. open dev tools. google show query string.
+GIT: Offer examples from last class. 
 
-
-<!-- TODO -->
-
-CREATE EXAMPLES POSSIBLY FOR SUMMARY
-NOTES FOR STUDIO WALKTHROUGH
-
+GET: Address before walkthrough using Dev tools.
+POST: Address after walkthrough using Dev tools. 
 
 <!-- Studio Walkthrough -->
 - GO TO LAUNCHCODES PAGE AND READ WHAT WE WILL DO
+- CREATE TODOS in VS Code
+- COMPLETELY START OVER
+
+from flask import Flask
+import random
+
+app = Flask(__name__)
+
+app.config['DEBUG'] = True     
+
+@app.route("/")
+def index():
+    content = "test"
+    return content
+
+
+
+app.run()
+
 
 - add page_header and page_footer for organization purposes:
 
@@ -53,7 +74,7 @@ add_form = """
     <form action="/add" method="post">=
             I want to add
             <input type="text" name="new-movie"/>
-            to my watchlist.=
+            to my watchlist.
         <input type="submit" value="Add It"/>
     </form>
 """
@@ -87,3 +108,7 @@ def index():
 
 
 app.run()
+
+
+<!-- EXAMPLE -->
+POST: Show using after our walkthrough. :)
