@@ -57,13 +57,7 @@ crossoff_form = """
 - HTML Escaping
 - URLs
 
-<!-- TODO -->
-1. Put Validate Time code on my machine
-2. Put Hello _____ on my Machine.
-
 <!-- Q&A -->
-3. ADD urllib.parse.urlencode example with Hello World
-Use the above three to Create Examples
 
 
 <!-- Studio Walkthough -->
