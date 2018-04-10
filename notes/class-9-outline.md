@@ -32,3 +32,64 @@ WHERE directors.last = "Kurosawa";
 <!-- Q&A -->
 
 <!-- Studio Walkthough -->
+
+git diff walkthrough6 walkthrough6a
+
+python
+from main import db, Movie
+
+(db.drop_all() if necessary)
+
+db.create_all()
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://flicklist:flicklist@localhost:8889/flicklist'
+
+<!-- TODO 0: Refactor Current Code to use movie objects in edit form html -->
+main.py(line 36)
+    return Movie.query.filter_by(watched = False).all()
+
+(Check where this is used)
+
+edit.html(lines 10, 11)
+    movie -> movie.name
+    movie -> movie.
+    
+(We will deal with crossoff later)
+
+    
+main.py(line 41)
+    return Movie.query.filter_by(watched = True).all()
+
+(Check where this is used)
+
+(You will deal with this in the studio)
+
+
+<!-- TODO 1: Adding Movies -->
+
+main.py (delete line 101)
+    new_movie = Movie(new_movie)
+    db.session.add(new_movie)
+    db.session.commit()
+
+add-confirmation.html (line 5)
+    movie becomes  movie.name
+
+
+<!-- TODO 2: Crossing-off Movies -->
+main.py(lines 69-83)
+    crossed_off_movie = Movie.query.filter_by(id = crossed_off_movie_id).first()
+    
+    if crossed_off_movie == None:
+        ....
+
+    crossed_off_movie.watched = True
+    db.session.add(crossed_off_movie)
+    db.session.commit()
+
+crossoff.html(line 4)
+    crossed_off_movie -> crossed_off_movie.name
+
+<!-- TODO 3: Ratings -->
+
+First of all! We need to add a rating to our class! Think about how you might do this. Good luck!
